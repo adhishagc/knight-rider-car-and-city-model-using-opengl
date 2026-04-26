@@ -21,7 +21,7 @@ Before writing any C++ OpenGL code, the vehicle and environment were meticulousl
    ![Tinkercad Prototype](visuals/tinkercad_prototype.png)
 
 2. **Wireframe & Coordinate Mapping (Photoshop)**: The 3D model was then projected into 2D orthogonal views in Photoshop. Exact relative coordinates were mapped out to serve as the vertex data for the OpenGL primitives.
-   ![Photoshop Wireframe Coordinates](visuals/photoshop_wireframe.jpg)
+   ![Photoshop Wireframe Coordinates](visuals/photoshop_wireframe.png)
 
 ---
 
@@ -56,7 +56,7 @@ The project utilizes sinusoidal functions to create smooth, natural animations r
 *   **Turbo Boost**: The jump height during a turbo boost follows a parabolic sine arc to simulate gravitational pull and momentum:
     $$ Height_{turbo} = 2 \cdot \sin(\theta) $$
 
-![Turbo Boost Effect](visuals/turbo_boost.jpg)
+![Turbo Boost Effect](visuals/turbo_boost.png)
 
 ### 3. Camera Transformations (View Matrix)
 The user can seamlessly switch between multiple dynamic camera perspectives (Side View, Back View, Tire View, Map View). This is achieved by recalculating the **View Matrix** via `gluLookAt`, which requires the camera position $(e_x, e_y, e_z)$, the target point $(c_x, c_y, c_z)$, and the UP vector $(u_x, u_y, u_z)$.
