@@ -5,6 +5,7 @@
 [![IDE](https://img.shields.io/badge/Environment-Code::Blocks-41AA4D.svg)](http://www.codeblocks.org/)
 
 ## 🏎️ Project Overview
+
 This project presents a fully interactive 3D simulation of the iconic **Knight Rider (KITT)** vehicle navigating a procedurally and hierarchically modeled city environment. Developed entirely from scratch using **C++** and the **OpenGL Utility Toolkit (GLUT)**, the project serves as a comprehensive exploration of low-level 3D computer graphics, real-time rendering, and mathematical kinematics.
 
 [![Knight Rider OpenGL Simulation Cover](https://i.ytimg.com/vi/OpR7b9zOqoE/hqdefault.jpg)](https://www.youtube.com/watch?v=OpR7b9zOqoE)
