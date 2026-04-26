@@ -7,7 +7,21 @@
 ## 🏎️ Project Overview
 This project presents a fully interactive 3D simulation of the iconic **Knight Rider (KITT)** vehicle navigating a procedurally and hierarchically modeled city environment. Developed entirely from scratch using **C++** and the **OpenGL Utility Toolkit (GLUT)**, the project serves as a comprehensive exploration of low-level 3D computer graphics, real-time rendering, and mathematical kinematics.
 
-[**🎬 Watch the Gameplay Demo Video**](https://drive.google.com/drive/folders/0Bxk-txqgejsvdGQtVWYtRUszZ2c?usp=sharing)
+[![Knight Rider OpenGL Simulation Cover](https://i.ytimg.com/vi/OpR7b9zOqoE/hqdefault.jpg)](https://www.youtube.com/watch?v=OpR7b9zOqoE)
+
+[**🎬 Watch the Gameplay & Development Demo on YouTube**](https://www.youtube.com/watch?v=OpR7b9zOqoE)
+
+---
+
+## 🛠️ Development & Prototyping
+
+Before writing any C++ OpenGL code, the vehicle and environment were meticulously prototyped:
+
+1. **3D Modeling & Verification (Tinkercad)**: A preliminary model was built in Tinkercad to conceptualize the proportions of the iconic vehicle.
+   ![Tinkercad Prototype](visuals/tinkercad_prototype.png)
+
+2. **Wireframe & Coordinate Mapping (Photoshop)**: The 3D model was then projected into 2D orthogonal views in Photoshop. Exact relative coordinates were mapped out to serve as the vertex data for the OpenGL primitives.
+   ![Photoshop Wireframe Coordinates](visuals/photoshop_wireframe.jpg)
 
 ---
 
@@ -33,12 +47,16 @@ If the distance $\Delta$ is less than the sum of their protective radii (`KITTSa
 ### 2. Kinematics: Simple Harmonic Motion
 The project utilizes sinusoidal functions to create smooth, natural animations rather than linear translations.
 
+![Physics Concepts of SHM](visuals/shm_physics.png)
+
 *   **KITT's Scanner**: The iconic red scanner light sweeps back and forth using Simple Harmonic Motion (SHM) governed by the system clock:
     $$ Y_{scanner} = A \cdot \sin(\omega \cdot t) $$
     *(Implementation: `scannerY_dark = 0.15 * sin(1 * relative_clock);`)*
 *   **Pond Water Waves**: The curvature and rippling of the pond surface are also driven by sinusoidal time-stepping.
 *   **Turbo Boost**: The jump height during a turbo boost follows a parabolic sine arc to simulate gravitational pull and momentum:
     $$ Height_{turbo} = 2 \cdot \sin(\theta) $$
+
+![Turbo Boost Effect](visuals/turbo_boost.jpg)
 
 ### 3. Camera Transformations (View Matrix)
 The user can seamlessly switch between multiple dynamic camera perspectives (Side View, Back View, Tire View, Map View). This is achieved by recalculating the **View Matrix** via `gluLookAt`, which requires the camera position $(e_x, e_y, e_z)$, the target point $(c_x, c_y, c_z)$, and the UP vector $(u_x, u_y, u_z)$.
